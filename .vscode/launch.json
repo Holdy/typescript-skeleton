@@ -24,6 +24,24 @@
             "runtimeArgs": ["--inspect-brk", "${workspaceRoot}/node_modules/.bin/jest", "--runInBand"],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
-        }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest Current File",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": [
+              "${fileBasenameNoExtension}",
+              "--config",
+              "jest/config.unit.js",
+              "--runInBand"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "runtimeArgs": ["--inspect-brk"],
+            "windows": {
+              "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+            }
+          }
     ]
 }
